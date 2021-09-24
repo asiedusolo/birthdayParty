@@ -1,0 +1,92 @@
+$ git branch
+* master
+  moma
+  whitney
+$ git branch -D moma whitney
+Deleted branch moma (was 978e5a1).
+Deleted branch whitney (was 9b384f9).
+$ git branch unordered-list
+$ git branch
+* master
+  unordered-list
+$ git checkout unordered-list
+Switched to branch 'unordered-list'
+$ git add index.html
+$ git commit -m "changed paragraph to unordered-list"
+[unordered-list 51d1926] changed paragraph to unordered-list
+ 1 file changed, 6 insertions(+), 2 deletions(-)
+$ git checkout master
+Switched to branch 'master'
+$ git branch
+* master
+  unordered-list
+$ git log
+commit 1481f5a6697bf95795ea627b367c3780c0147121
+Author: danasselin <johndoe@example.com>
+Date:   Thu Nov 19 13:23:36 2015 -0500
+
+    Add description p tags
+
+commit 724623cb16664dfd3d5e51000b77530b59b7be8d
+Author: danasselin <johndoe@example.com>
+Date:   Thu Nov 19 13:23:22 2015 -0500
+
+    Add headings
+
+commit 1ddb10cf2dbb8448b9af4938683f09bad4f68755
+Author: danasselin <johndoe@example.com>
+Date:   Thu Nov 19 13:23:05 2015 -0500
+
+    Add boilerplate HTML
+$ git checkout unoredered-list
+error: pathspec 'unoredered-list' did not match any file(s) known to git.
+$ git checkout unordered-list
+Switched to branch 'unordered-list'
+$ git log
+commit 51d1926d346fd77df18bd1d1d19e75d17e7c652c
+Author: codecademy <ccuser@codecademy.com>
+Date:   Fri Sep 24 05:37:21 2021 +0000
+
+    changed paragraph to unordered-list
+
+commit 1481f5a6697bf95795ea627b367c3780c0147121
+Author: danasselin <johndoe@example.com>
+Date:   Thu Nov 19 13:23:36 2015 -0500
+
+    Add description p tags
+
+commit 724623cb16664dfd3d5e51000b77530b59b7be8d
+Author: danasselin <johndoe@example.com>
+Date:   Thu Nov 19 13:23:22 2015 -0500
+
+    Add headings
+
+commit 1ddb10cf2dbb8448b9af4938683f09bad4f68755
+Author: danasselin <johndoe@example.com>
+Date:   Thu Nov 19 13:23:05 2015 -0500
+
+    Add boilerplate HTML
+$ git branch
+  master
+* unordered-list
+$ git checkout master
+Switched to branch 'master'
+$ git merge unordered-list
+Updating 1481f5a..51d1926
+Fast-forward
+ index.html | 8 ++++++--
+ 1 file changed, 6 insertions(+), 2 deletions(-)
+$ git branch big-heading
+$ git checkout big-heading
+Switched to branch 'big-heading'
+$ git add index.html
+$ git commit -m "make heading bigger"
+[big-heading e760190] make heading bigger
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+$ git checkout master
+Switched to branch 'master'
+$ git merge big-heading
+Updating 51d1926..e760190
+Fast-forward
+ index.html | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
